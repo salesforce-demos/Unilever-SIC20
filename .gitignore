@@ -34,6 +34,9 @@ ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
 
-#Config file
+#VsCode + Config folder
 .vscode/
 config/
+
+
+ 

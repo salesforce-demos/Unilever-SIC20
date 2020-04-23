@@ -1,0 +1,92 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="phrase" type="String" default="Click the mic or say Einstein"/>
+    <aura:attribute name="stage" type="Integer" default="0"/>
+    <!--onmouseover="{!c.showToolTip}"-->
+    <div>
+        <div style="display:none">
+            <audio src="/resource/Demo_VoiceSounds/micon.mp3" id="micon" aura:id="micon"/>
+            <audio src="/resource/Demo_VoiceSounds/analysis.mp3" id="analysis" aura:id="analysis"/>
+            <audio src="/resource/Demo_VoiceSounds/done.mp3" id="done" aura:id="done"/>
+            <img src="https://www.dropbox.com/s/98xvr9najxhk737/assistant-active.png?raw=1"/>
+        </div>
+        <footer class="slds-utility-bar_container" aria-label="Utility Bar">
+            <h2 class="slds-assistive-text">Utility Bar</h2>
+            <ul class="slds-utility-bar">
+              <li class="slds-utility-bar__item">
+                  <button class="slds-button slds-utility-bar__action" aria-pressed="false" onclick="{!c.showAssistant}" aura:id="bar">                    
+                 <lightning:icon size="x-small" iconName="utility:einstein" class="pad-right"/>
+                  <span class="slds-utility-bar__text">Video Call Live Transcription</span>
+                </button>
+              </li>
+            </ul>
+            <div class="slds-utility-panel slds-grid slds-grid_vertical hidden" aura:id="panel" role="dialog" aria-labelledby="panel-heading-01">
+              <div class="slds-utility-panel__header slds-grid slds-shrink-none">
+                  <div class="slds-media slds-media_center">
+                      <div class="slds-media__figure slds-m-right_x-small">
+                          <span class="slds-icon_container">
+                              <lightning:icon class="slds-button_icon" size="small" iconName="utility:einstein"/>
+                          </span>
+                      </div>
+                      <div class="slds-media__body">
+                          <h2 id="panel-heading-01">Video Call Live Transcription</h2>
+                      </div>
+                  </div>
+                  <div class="slds-col_bump-left slds-shrink-none">
+                      <button class="slds-button slds-button_icon slds-button_icon" title="Close Panel" onclick="{!c.closePanel}">
+                          <lightning:icon class="slds-button_icon" size="x-small" iconName="utility:minimize_window"/>
+                          <span class="slds-assistive-text">Close Panel</span>
+                      </button>
+                  </div>
+                </div>
+                <div class="slds-utility-panel__body " onclick="{!c.startAssistant}">
+                    <div class="title slds-p-horizontal_small slds-p-top_small">
+					{!v.phrase}
+                    </div>
+                    <!--div class="samples hide slds-p-horizontal_small slds-p-top_small" aura:id="samples">
+                    	<div class="sample">
+                            <img src="https://www.dropbox.com/s/amj3e5phf9vzv5v/mic.png?raw=1"/>
+                            go to recent opportunities
+                        </div>
+                        <div class="sample">
+                            <img src="https://www.dropbox.com/s/amj3e5phf9vzv5v/mic.png?raw=1"/>
+                            show Top Accounts report
+                        </div>
+                        <div class="sample">
+                            <img src="https://www.dropbox.com/s/amj3e5phf9vzv5v/mic.png?raw=1"/>
+                            bring up my Chatter feed
+                        </div>
+                    </div-->
+                    <div class="mic-wrapper">
+                        <div class="mic-wave hide" aura:id="mic-wave">
+                            <img src="https://www.dropbox.com/s/wbd6h6ksg2brq53/wave.gif?raw=1"/>
+                        </div>
+                        <div class="mic-bar" aura:id="mic-bar" >
+                            <img src="https://www.dropbox.com/s/elhrrj20xz4mvaa/mic-bar.png?raw=1"/>
+                        </div>
+                        <!--div class="mic-button" aura:id="mic-button">
+                            <div class="mic-left" aura:id="mic-left">
+                                <div class="eqbar bar-1"></div>
+                                <div class="eqbar bar-2"></div>
+                                <div class="eqbar bar-3"></div>
+                                <div class="eqbar bar-4"></div>
+                                <div class="eqbar bar-5"></div>
+                            </div>
+                            <div class="mic-center" aura:id="mic" >
+                                <img class="hideactive" src="https://www.dropbox.com/s/5pwyqhqvvlhk7ee/mic-button-off.png?raw=1"/>
+                                <img class="showactive" src="https://www.dropbox.com/s/prigm8x17jokk4v/mic-button-on.png?raw=1"/>
+                            </div>
+                            <div class="mic-right" aura:id="mic-right">
+                                <div class="eqbar bar-5"></div>
+                                <div class="eqbar bar-4"></div>
+                                <div class="eqbar bar-3"></div>
+                                <div class="eqbar bar-2"></div>
+                                <div class="eqbar bar-1"></div>
+                            </div>
+                        </div-->
+                    </div>
+                </div>
+            </div>
+          </footer>
+    </div>
+</aura:component>	

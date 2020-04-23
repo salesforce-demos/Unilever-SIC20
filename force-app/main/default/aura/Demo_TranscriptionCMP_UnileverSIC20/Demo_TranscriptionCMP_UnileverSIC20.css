@@ -1,0 +1,354 @@
+.THIS {
+}
+/* state 1 */
+@-webkit-keyframes flashHeader-1{
+      0%    {height: 2px;}
+    27%   {height: 2px;}
+    57%   {height: 9px;}
+    77%   {height: 2px;}
+    100%  {height: 2px;}
+}
+@-webkit-keyframes flashHeader-2{
+      0%    {height: 2px;}
+    24%   {height: 2px;}
+    54%   {height: 9px;}
+    74%   {height: 2px;}
+    100%  {height: 2px;}
+}
+@-webkit-keyframes flashHeader-3{
+      0%    {height: 2px;}
+    21%   {height: 2px;}
+    51%   {height: 9px;}
+    71%   {height: 2px;}
+    100%  {height: 2px;}
+}
+@-webkit-keyframes flashHeader-4{
+      0%    {height: 2px;}
+    18%   {height: 2px;}
+    48%   {height: 9px;}
+    68%   {height: 2px;}
+    100%  {height: 2px;}
+}
+@-webkit-keyframes flashHeader-5{
+      0%    {height: 2px;}
+    15%   {height: 2px;}
+    45%   {height: 9px;}
+    65%   {height: 2px;}
+    100%  {height: 2px;}
+}
+
+/* on */
+@-webkit-keyframes bar5{
+    0%   {height: 10px;}
+    20%  {height: 20px;}
+    50%  {height: 10px;}
+    75%  {height: 20px;}
+    100% {height: 10px;}
+}
+@-webkit-keyframes bar4{
+    0%   {height: 8px;}
+    25%  {height: 15px;}
+    50%  {height: 8px;}
+    75%  {height: 15px;}
+    100% {height: 8px;}
+}
+@-webkit-keyframes bar3{
+    0%   {height: 6px;}
+    30%  {height: 12px;}
+    50%  {height: 6px;}
+    75%  {height: 12px;}
+    100% {height: 6px;}
+}
+@-webkit-keyframes bar2{
+    0%   {height: 4px;}
+    35%  {height: 10px;}
+    50%  {height: 4px;}
+    75%  {height: 10px;}
+    100% {height: 4px;}
+}
+@-webkit-keyframes bar1{
+    0%   {height: 2px;}
+    40%  {height: 8px;}
+    50%  {height: 2px;}
+    75%  {height: 8px;}
+    100% {height: 2px;}
+}
+
+/* state 1 */
+.THIS .mic-left.on > .eqbar.bar-1, .THIS .mic-right.on > .eqbar.bar-1{
+    animation-name: flashHeader-1;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+.THIS .mic-left.on > .eqbar.bar-2, .THIS .mic-right.on > .eqbar.bar-2{
+    animation-name: flashHeader-2;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+.THIS .mic-left.on > .eqbar.bar-3, .THIS .mic-right.on > .eqbar.bar-3{
+    animation-name: flashHeader-3;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+.THIS .mic-left.on > .eqbar.bar-4, .THIS .mic-right.on > .eqbar.bar-4{
+    animation-name: flashHeader-4;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+.THIS .mic-left.on > .eqbar.bar-5, .THIS .mic-right.on > .eqbar.bar-5{
+    animation-name: flashHeader-5;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+.THIS .mic-left.active > .eqbar.bar-1 , .THIS .mic-right.active > .eqbar.bar-1{
+    animation-name: bar1;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.THIS .mic-left.active > .eqbar.bar-2 , .THIS .mic-right.active > .eqbar.bar-2{
+    animation-name: bar2;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.THIS .mic-left.active > .eqbar.bar-3 , .THIS .mic-right.active > .eqbar.bar-3{
+    animation-name: bar3;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.THIS .mic-left.active > .eqbar.bar-4 , .THIS .mic-right.active > .eqbar.bar-4{
+    animation-name: bar4;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+.THIS .mic-left.active > .eqbar.bar-5 , .THIS .mic-right.active > .eqbar.bar-5{
+    animation-name: bar5;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+} 
+.THIS .slds-utility-bar_container{
+	z-index:10000;
+}
+.THIS .bottom-bar{
+	position:fixed;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:40px;
+    background-image:url(https://www.dropbox.com/s/wd7y09y46335zex/assistant.png?raw=1);
+    background-size:100%;
+    z-index:10000;
+    box-shadow: 0px -1px 3px 0px rgba(191,191,191,1);
+}
+.THIS .bottom-bar.active{
+	background-image:url(https://www.dropbox.com/s/98xvr9najxhk737/assistant-active.png?raw=1);
+}
+.THIS .slds-utility-bar__action:hover{
+    background:rgba(0, 112, 210, 0.1);
+}
+.THIS .slds-utility-bar__action:hover:after {
+    background: #1589EE;
+}
+.THIS .slds-is-active{
+    background:rgba(0, 112, 210, 0.1);
+}
+.THIS .slds-utility-bar__action.slds-is-active:after {
+    background: #1589EE;
+}
+.THIS .slds-utility-panel{
+    height: 296px;
+    width: 398px;
+    left: 12px;
+    bottom: 40px;
+    transition:transform 0.3s;
+    transform:translate3d(0px,0px,0px);
+}
+.THIS .slds-utility-panel.hidden{
+    transform:translate3d(0px,336px,0px);
+}
+.THIS .demo-assistant{
+	position:fixed;
+    bottom:40px;
+    left:13px;
+    height:296px;
+    width:398px;
+    background-image:url(https://www.dropbox.com/s/9yvw0ufc7xvljgz/einstein.png?raw=1);
+    background-size:100%;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px; 
+    transform:translate3d(0px,296px,0px);
+    transition:transform 0.3s;
+    z-index:999;
+    box-shadow: 0px 0px 3px 0px rgba(191,191,191,1);
+}
+.THIS .demo-assistant.in{
+	transform:translate3d(0px,0px,0px);
+}
+.THIS .slds-utility-panel__header {
+    background: white;
+    border-bottom: 2px solid #1589ee;
+}
+.THIS .pad-right{
+	padding-right:5px;
+}
+.THIS .pad-right svg{
+	fill:black;
+}
+.THIS .title{
+    font-weight: 300;
+    font-size: 20px;
+    color: #2A2929;
+    line-height: 31px;
+    padding-left: 18px;
+}
+.THIS .sample{
+	font-size: 18px;
+    color: #057add;
+    line-height: 1.1em;
+    vertical-align:middle;
+    margin-top:15px;
+}
+.THIS .sample > img{
+	vertical-align:middle;
+    height:24px;
+    margin-right:10px;
+}
+.THIS .samples.hide{
+	display:none;
+}
+.THIS .mic-button{
+	display:flex;
+}
+.THIS .mic-button.hide{
+	display:none;
+}
+.THIS .mic-wave{
+	width:100%;
+}
+.THIS .mic-wave > img{
+	width:400px;
+    margin-left:-2px;
+}
+.THIS .mic-bar.hide{
+	display:none;
+}
+.THIS .mic-bar{
+	width:100%;
+}
+.THIS .mic-bar > img{
+	width:400px;
+    margin-left:-2px;
+}
+.THIS .mic-wave.hide{
+	display:none;
+}
+.THIS .mic-center{
+    width:40px;
+    height:40px;
+	flex: 0 0 40px;
+    cursor:pointer;
+}
+.THIS .mic-center > img{
+	width:40px;
+}
+.THIS .mic-center > .showactive{
+	display:none;
+}
+.THIS .mic-center > .hideactive{
+	display:block;
+}
+.THIS .mic-center.active > .showactive{
+	display:block;
+}
+.THIS .mic-center.active > .hideactive{
+	display:none;
+}
+
+
+.THIS .mic-wrapper{
+	width:100%;
+    position:absolute;
+    bottom:10px;
+    left:0px;
+    overflow:hidden;
+}
+.THIS .mic-right{
+    height:40px;
+    flex:1;
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
+}
+.THIS .mic-left{
+    height:40px;
+    flex:1;
+    display:flex;
+    justify-content: flex-end;
+    align-items:center;
+}
+.THIS .eqbar{
+	flex:0 0 7px;
+    margin-left:10px;
+    margin-right:10px;
+    width:7px;
+    background:#197CDA;
+    border-radius:3px;
+    transition:all 0.3s;
+}/*
+.THIS .mic-left.on > .eqbar,.THIS .mic-right.on > .eqbar{
+    animation-name: flashHeader;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.THIS .mic-left.active > .eqbar.bar-1 ,.THIS .mic-right.active > .eqbar.bar-1{
+    animation-name: bar1;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.THIS .mic-left.active > .eqbar.bar-2 ,.THIS .mic-right.active > .eqbar.bar-2{
+    animation-name: bar2;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.THIS .mic-left.active > .eqbar.bar-3 ,.THIS .mic-right.active > .eqbar.bar-3{
+    animation-name: bar3;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.THIS .mic-left.active > .eqbar.bar-4 ,.THIS .mic-right.active > .eqbar.bar-4{
+    animation-name: bar4;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.THIS .mic-left.active > .eqbar.bar-5 ,.THIS .mic-right.active > .eqbar.bar-5{
+    animation-name: bar5;
+    animation-duration: 1.0s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+*/
