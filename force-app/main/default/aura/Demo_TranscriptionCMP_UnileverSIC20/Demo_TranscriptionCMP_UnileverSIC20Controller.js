@@ -26,6 +26,14 @@
 		}
         component.set('v.stage',stage);
     },
+    showTooltipOne : function (component, helper, event){
+        tooltip = component.find('tooltipOne');
+        $A.util.toggleClass(bar,'slds-hide');
+    },
+    showTooltipOne : function (component, helper, event){
+        tooltip = component.find('tooltipTwo');
+        $A.util.toggleClass(bar,'slds-hide');
+    },
     closePanel : function(component, event, helper) {
         // close window and reset all
         var assistant = component.find('panel');

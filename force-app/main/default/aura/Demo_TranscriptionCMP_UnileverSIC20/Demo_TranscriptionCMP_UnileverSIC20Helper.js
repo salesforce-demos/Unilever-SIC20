@@ -1,7 +1,9 @@
 ({
 	fakeText : function(cmp,hlp) {
         cmp.set('v.phrase','');  
-        cmp.set('v.phraseTwo','');       
+        cmp.set('v.phraseTwo','');  
+        cmp.set('v.highlightOne','');  
+        cmp.set('v.highlightTwo','');       
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi');
@@ -29,15 +31,14 @@
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hi my name is A');
+                cmp.set('v.phrase','Hi my name is');
             }), 2100
-        );
-         //add class to last character of string and add tooltip hover
-        /*var phrases = document.getElementsByClassName('phrase');
-        var phraseOne = phrases[0];
-        var text = phraseOne.innerHTML[14];
-        
-        */     
+        );  
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.highlightOne','A');
+            }), 2100
+        );    
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseTwo','Hi');
@@ -65,7 +66,12 @@
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseTwo','Hi my name is B');
+                cmp.set('v.phraseTwo','Hi my name is');
+            }), 3500
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.highlightTwo','B');
             }), 3500
         );
         //add class to last character of string and add tooltip hover

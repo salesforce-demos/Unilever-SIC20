@@ -79,6 +79,7 @@
     position: relative;
     left: 215px;
 }
+
 .THIS .mic-left.on > .eqbar.bar-1, .THIS .mic-right.on > .eqbar.bar-1{
     animation-name: flashHeader-1;
     animation-duration: 1.5s;
