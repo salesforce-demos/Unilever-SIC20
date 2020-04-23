@@ -5,30 +5,30 @@
         cmp.set('v.phrase','');       
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hello');
+                cmp.set('v.phrase','Einstein');
             }), 1500
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hello my');
+                cmp.set('v.phrase','Einstein how');
             }), 2200
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hello my name');
+                cmp.set('v.phrase','Einstein how can i');
             }), 2600
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hello my name is');
+                cmp.set('v.phrase','Einstein how can I improve');
             }), 3100
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hello my name is a');
+                cmp.set('v.phrase','Einstein how can I improve customer');
             }), 3800
         );
-        /*window.setTimeout(
+        window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Einstein how can I improve consumer');
             }), 4200
@@ -37,10 +37,10 @@
             $A.getCallback(function() {
 				cmp.set('v.phrase','Einstein how can I improve consumer engagement');
             }), 4800
-        );*/
+        );
         window.setTimeout(
             $A.getCallback(function() {
-				cmp.set('v.phrase','Hello my name is A');
+				cmp.set('v.phrase','Einstein how can I improve Consumer Engagement');
                 var evt = new Event('filter');
 				document.dispatchEvent(evt);
                 //hlp.resetBar(cmp,hlp);
