@@ -314,41 +314,4 @@
     background:#197CDA;
     border-radius:3px;
     transition:all 0.3s;
-}/*
-.THIS .mic-left.on > .eqbar,.THIS .mic-right.on > .eqbar{
-    animation-name: flashHeader;
-    animation-duration: 1.0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
 }
-.THIS .mic-left.active > .eqbar.bar-1 ,.THIS .mic-right.active > .eqbar.bar-1{
-    animation-name: bar1;
-    animation-duration: 1.0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-}
-.THIS .mic-left.active > .eqbar.bar-2 ,.THIS .mic-right.active > .eqbar.bar-2{
-    animation-name: bar2;
-    animation-duration: 1.0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-}
-.THIS .mic-left.active > .eqbar.bar-3 ,.THIS .mic-right.active > .eqbar.bar-3{
-    animation-name: bar3;
-    animation-duration: 1.0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-}
-.THIS .mic-left.active > .eqbar.bar-4 ,.THIS .mic-right.active > .eqbar.bar-4{
-    animation-name: bar4;
-    animation-duration: 1.0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-}
-.THIS .mic-left.active > .eqbar.bar-5 ,.THIS .mic-right.active > .eqbar.bar-5{
-    animation-name: bar5;
-    animation-duration: 1.0s;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-}
-*/

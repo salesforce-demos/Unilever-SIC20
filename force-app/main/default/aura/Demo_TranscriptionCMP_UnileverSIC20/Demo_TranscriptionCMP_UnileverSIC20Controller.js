@@ -1,7 +1,6 @@
 ({
     doInit:function(component, event, helper) {
-//    	component.set('v.phrase','Click on mic or say "Einstein"');
-        component.set('v.phrase','Click on mic or say "Einstein"');
+        //component.set('v.phrase','Click on mic or say "Einstein"');
         var mic = component.find('mic');
         $A.util.toggleClass(mic,'active');
         
@@ -21,25 +20,9 @@
         
         if(stage == 1){
             helper.fakeText(component,helper);
-			//helper.toggleWave(component)
-           // helper.playSound(component,helper,'micon');
-            /*
-            var micbutton = component.find('mic-button');
-            $A.util.addClass(micbutton,'hide');
-            
-            var micwave = component.find('mic-wave');
-            $A.util.removeClass(micwave,'hide');
-			*/
             stage++;
         }else if(stage == 2){
             helper.resetPanel(component);
-            /*
-            var micbutton = component.find('mic-button');
-            $A.util.removeClass(micbutton,'hide');
-            
-            var micwave = component.find('mic-wave');
-            $A.util.addClass(micwave,'hide');
-            */
             stage = 1;
 		}
         
