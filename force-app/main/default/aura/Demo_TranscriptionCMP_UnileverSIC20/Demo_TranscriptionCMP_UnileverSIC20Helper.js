@@ -1,67 +1,80 @@
 ({
-    fakeText : function(cmp,hlp) {
-        var samples = cmp.find('samples');
-        $A.util.addClass(samples,'hide');
-        cmp.set('v.phrase','');       
+	fakeText : function(cmp,hlp) {
+        cmp.set('v.phrase','');  
+        cmp.set('v.phraseTwo','');       
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Einstein');
-            }), 1500
+                cmp.set('v.phrase','Hi');
+            }), 1000
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Einstein how');
-            }), 2200
+                cmp.set('v.phrase','Hi my');
+            }), 1200
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Einstein how can i');
-            }), 2600
+                cmp.set('v.phrase','Hi my name');
+            }), 1400
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Einstein how can I improve');
+                cmp.set('v.phrase','Hi my name is');
+            }), 1600
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phrase','Hi my name is a');
+            }), 1800
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phrase','Hi my name is A');
+            }), 2100
+        );
+         //add class to last character of string and add tooltip hover
+        /*var phrases = document.getElementsByClassName('phrase');
+        var phraseOne = phrases[0];
+        var text = phraseOne.innerHTML[14];
+        
+        */     
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseTwo','Hi');
+            }), 2500
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseTwo','Hi my');
+            }), 2700
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseTwo','Hi my name');
+            }), 2900
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseTwo','Hi my name is');
             }), 3100
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Einstein how can I improve customer');
-            }), 3800
+                cmp.set('v.phraseTwo','Hi my name is b');
+            }), 3300
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Einstein how can I improve consumer');
-            }), 4200
+                cmp.set('v.phraseTwo','Hi my name is B');
+            }), 3500
         );
-        window.setTimeout(
-            $A.getCallback(function() {
-				cmp.set('v.phrase','Einstein how can I improve consumer engagement');
-            }), 4800
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-				cmp.set('v.phrase','Einstein how can I improve Consumer Engagement');
-                var evt = new Event('filter');
-				document.dispatchEvent(evt);
-                //hlp.resetBar(cmp,hlp);
-                var micl = cmp.find('mic-left');
-                $A.util.removeClass(micl,'active');
-                $A.util.addClass(micl,'on');
-                
-                var micr = cmp.find('mic-right');
-                $A.util.removeClass(micr,'active');	
-                $A.util.addClass(micr,'on');	
-				hlp.playSound(cmp,hlp,'analysis');
-            }), 5300
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                hlp.toggleWave(cmp);
-                var event = new Event('build');
-                window.dispatchEvent(event);
-            }), 5100
-        );
-	},
+        //add class to last character of string and add tooltip hover
+        /*var phrases = document.getElementsByClassName('phrase');
+        var phraseTwo = phrases[1];
+        var text = phraseTwo.innerHTML[14];
+        
+        */
+    },
     resetBar : function(component,hlp){
         var assistant = component.find('panel');
         $A.util.toggleClass(assistant,'hidden');
@@ -75,21 +88,8 @@
 
 	},
     resetPanel : function(component){
-        var mic = component.find('mic');
-        $A.util.removeClass(mic,'active');
-        
-        var samples = component.find('samples');
-        $A.util.addClass(samples,'hide');
-        
-        var micl = component.find('mic-left');
-        $A.util.removeClass(micl,'on');
-        $A.util.removeClass(micl,'active');
-        
-        var micr = component.find('mic-right');
-        $A.util.removeClass(micr,'on');		
-        $A.util.removeClass(micr,'active');		
-        
-        component.set('v.phrase','Click on mic or say "Einstein"');
+        component.set('v.phrase',' ');
+        component.set('v.phraseTwo',' ');
         component.set('v.stage',0);
 	}
 })
