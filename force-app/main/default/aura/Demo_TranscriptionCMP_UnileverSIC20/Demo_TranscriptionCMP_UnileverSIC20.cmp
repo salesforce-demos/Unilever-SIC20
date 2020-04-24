@@ -44,7 +44,7 @@
                         <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
                             <a href="javascript:void(0)" aria-describedby="help">{!v.highlightOne}</a>
                             <lightning:helptext
-                                class="helptext-icon" content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
+                                class="helptext-icon" content="Something insightful about A."
                             />
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
                             <a href="javascript:void(0)" aria-describedby="help">{!v.highlightTwo}</a>
                             <lightning:helptext
-                                class="helptext-icon" content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
+                                class="helptext-icon" content="Something insightful about B."
                             />
                         </div>
                     </div>

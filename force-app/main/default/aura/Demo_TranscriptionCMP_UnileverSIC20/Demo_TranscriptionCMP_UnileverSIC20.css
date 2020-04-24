@@ -75,6 +75,10 @@
 }
 
 /* positions + recording animation */
+.THIS .slds-utility-panel__body {
+    overflow: hidden !important;
+}
+
 .THIS .right {
     bottom: 25px;
     position: relative;

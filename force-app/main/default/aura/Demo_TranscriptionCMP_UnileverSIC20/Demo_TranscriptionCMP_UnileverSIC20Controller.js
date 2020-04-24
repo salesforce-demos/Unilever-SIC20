@@ -5,10 +5,14 @@
         component.set('v.phraseTwo','  ');
         component.set('v.stage',1);
     },
-    /*afterRender: function(component, helper) {
-        this.superAfterRender();
-        //helper.hideHelpText(component, event, helper);
-        // hide the helper text 
+    showAssistant : function(component, event, helper) {
+        // slide up window 
+		var assistant = component.find('panel');
+        $A.util.toggleClass(assistant,'hidden');
+		var bar = component.find('bar');
+        $A.util.toggleClass(bar,'slds-is-active');
+
+        // hide the helper text icon 
         var helptextButtons = document.getElementsByClassName('tool-tip');
         var toolOne = helptextButtons[0];
         var toolTwo = helptextButtons[1];
@@ -18,13 +22,6 @@
         var iconButtonTwo = iconTwo[0];
         iconButtonOne.style.visibility = "hidden";
         iconButtonTwo.style.visibility = "hidden";
-    },*/
-    showAssistant : function(component, event, helper) {
-        // slide up window 
-		var assistant = component.find('panel');
-        $A.util.toggleClass(assistant,'hidden');
-		var bar = component.find('bar');
-        $A.util.toggleClass(bar,'slds-is-active');
 	},
     startAssistant : function(component, event, helper) {
         // start transcription 
