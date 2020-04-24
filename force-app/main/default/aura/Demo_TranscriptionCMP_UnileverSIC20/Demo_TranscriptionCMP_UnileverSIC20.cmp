@@ -40,20 +40,20 @@
                 </div>
                 <div class="slds-utility-panel__body " onclick="{!c.startAssistant}">
                     <div class="title slds-p-horizontal_small slds-p-top_small phrase">
-                        {!v.phrase}
+                        {!v.phraseTwo}
                         <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
                             <a class="tooltip-a" href="javascript:void(0)" aria-describedby="help">{!v.highlightOne}</a>
                             <lightning:helptext
-                                class="helptext-icon" content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
+                                content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
                             />
-                        </div>
+                        </div>-
                     </div>
                     <div class="title slds-p-horizontal_small slds-p-top_small right phrase" >
                         {!v.phraseTwo}
                         <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
                             <a class="tooltip-a" href="javascript:void(0)" aria-describedby="help">{!v.highlightTwo}</a>
                             <lightning:helptext
-                                class="helptext-icon" content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
+                                content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
                             />
                         </div>
                     </div>
