@@ -1,5 +1,6 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+   
     <aura:attribute name="phrase" type="String" default=" "/>
     <aura:attribute name="highlightOne" type="String" default=" "/>
     <aura:attribute name="phraseTwo" type="String" default=" "/>
@@ -7,12 +8,6 @@
     <aura:attribute name="stage" type="Integer" default="0"/>
 
     <div>
-       <!--<div style="display:none">
-            <audio src="/resource/Demo_VoiceSounds/micon.mp3" id="micon" aura:id="micon"/>
-            <audio src="/resource/Demo_VoiceSounds/analysis.mp3" id="analysis" aura:id="analysis"/>
-            <audio src="/resource/Demo_VoiceSounds/done.mp3" id="done" aura:id="done"/>
-            <img src="https://www.dropbox.com/s/98xvr9najxhk737/assistant-active.png?raw=1"/>
-        </div>-->
         <footer class="slds-utility-bar_container" aria-label="Utility Bar">
             <h2 class="slds-assistive-text">Utility Bar</h2>
             <ul class="slds-utility-bar">
@@ -34,6 +29,7 @@
                       <div class="slds-media__body">
                           <h2 id="panel-heading-01">Live Transcription</h2>
                       </div>
+                      <button class="rec rec-button">Recording</button>
                   </div>
                   <div class="slds-col_bump-left slds-shrink-none">
                       <button class="slds-button slds-button_icon slds-button_icon" title="Close Panel" onclick="{!c.closePanel}">
@@ -45,20 +41,20 @@
                 <div class="slds-utility-panel__body " onclick="{!c.startAssistant}">
                     <div class="title slds-p-horizontal_small slds-p-top_small phrase">
                         {!v.phrase}
-                        <div style="position:relative;position: relative;bottom: 31px;left: 131px;">
-                            <a href="javascript:void(0)" aria-describedby="help" onmouseover="{!c.showTooltipOne}">{!v.highlightOne}</a>
-                            <div aura:id="tooltip-one" class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left slds-hide" role="tooltip" id="help" style="position:absolute;top:-4px;left:35px">
-                                <div class="slds-popover__body">Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.</div>
-                            </div>
+                        <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
+                            <a class="tooltip-a" href="javascript:void(0)" aria-describedby="help">{!v.highlightOne}</a>
+                            <lightning:helptext
+                                class="helptext-icon" content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
+                            />
                         </div>
                     </div>
                     <div class="title slds-p-horizontal_small slds-p-top_small right phrase" >
                         {!v.phraseTwo}
-                        <div style="position:relative;position: relative;bottom: 31px;left: 131px;">
-                            <a href="javascript:void(0)" aria-describedby="help" onmouseover="{!c.showTooltipOne}">{!v.highlightTwo}</a>
-                            <div aura:id="tooltip-two" class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left slds-hide" role="tooltip" id="help" style="position:absolute;top:-4px;left:35px">
-                                <div class="slds-popover__body">Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi.</div>
-                            </div>
+                        <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
+                            <a class="tooltip-a" href="javascript:void(0)" aria-describedby="help">{!v.highlightTwo}</a>
+                            <lightning:helptext
+                                class="helptext-icon" content="The tooltip displays on the lower left of the icon or above the icon if space is available. It automatically adjusts its position according to the viewport."
+                            />
                         </div>
                     </div>
                 </div>

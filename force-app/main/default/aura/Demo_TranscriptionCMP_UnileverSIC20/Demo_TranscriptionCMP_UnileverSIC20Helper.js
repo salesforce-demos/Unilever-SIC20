@@ -37,7 +37,7 @@
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightOne','A');
-            }), 2100
+            }), 2300
         );    
         window.setTimeout(
             $A.getCallback(function() {
@@ -72,13 +72,12 @@
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightTwo','B');
-            }), 3500
+            }), 3800
         );
-        //add class to last character of string and add tooltip hover
+        //add class to last character of string and add tooltip on hover
         /*var phrases = document.getElementsByClassName('phrase');
         var phraseTwo = phrases[1];
         var text = phraseTwo.innerHTML[14];
-        
         */
     },
     resetBar : function(component,hlp){
@@ -96,6 +95,8 @@
     resetPanel : function(component){
         component.set('v.phrase',' ');
         component.set('v.phraseTwo',' ');
+        component.set('v.highlightOne',' ');
+        component.set('v.highlightTwo',' ');
         component.set('v.stage',0);
 	}
 })

@@ -74,12 +74,53 @@
     100% {height: 2px;}
 }
 
-/* state 1 */
+/* positions + recording animation */
 .THIS .right {
+    bottom: 25px;
     position: relative;
-    left: 215px;
+    left: 210px;
 }
 
+.THIS .tooltip-a {
+    color: red !important;
+}
+
+.THIS a:hover {
+    text-decoration: none !important;
+}
+
+.THIS .rec-button {
+	width: 15px;
+	height: 15px;
+	font-size: 0;
+	background-color: red;
+	border: 0;
+    border-radius: 35px;
+    padding-top: 10px;
+    outline: none;
+    margin-left: 5px;
+}
+
+.THIS .rec{
+	animation-name: pulse;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@-webkit-keyframes pulse{
+	0%{
+		box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
+	}
+	65%{
+		box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
+	}
+	90%{
+		box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
+	}
+}
+
+/*state 1*/
 .THIS .mic-left.on > .eqbar.bar-1, .THIS .mic-right.on > .eqbar.bar-1{
     animation-name: flashHeader-1;
     animation-duration: 1.5s;
