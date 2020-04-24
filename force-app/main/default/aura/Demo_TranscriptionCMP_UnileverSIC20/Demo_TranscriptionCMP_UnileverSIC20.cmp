@@ -40,7 +40,7 @@
                 </div>
                 <div class="slds-utility-panel__body " onclick="{!c.startAssistant}">
                     <div class="title slds-p-horizontal_small slds-p-top_small phrase">
-                        {!v.phraseTwo}
+                        {!v.phraseOne}
                         <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
                             <a class="tooltip-a" href="javascript:void(0)" aria-describedby="help">{!v.highlightOne}</a>
                             <lightning:helptext
