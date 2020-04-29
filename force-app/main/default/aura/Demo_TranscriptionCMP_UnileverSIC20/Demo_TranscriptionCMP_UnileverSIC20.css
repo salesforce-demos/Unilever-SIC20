@@ -79,6 +79,10 @@
     overflow: hidden !important;
 }
 
+.THIS .fake-u-bar {
+    width: 334px !important;
+}
+
 .THIS .right {
     bottom: 25px;
     position: relative;

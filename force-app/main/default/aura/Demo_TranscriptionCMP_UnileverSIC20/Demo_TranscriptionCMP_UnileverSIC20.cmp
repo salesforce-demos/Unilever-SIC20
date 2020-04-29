@@ -1,4 +1,5 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler event="c:SCGlobalEvent" action="{!c.handleGlobalEvent}"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
    
     <aura:attribute name="phrase" type="String" default=" "/>
@@ -13,9 +14,10 @@
             <ul class="slds-utility-bar">
               <li class="slds-utility-bar__item">
                   <button class="slds-button slds-utility-bar__action" aria-pressed="false" onclick="{!c.showAssistant}" aura:id="bar">                    
-                 <lightning:icon size="x-small" iconName="utility:listen" class="pad-right"/>
-                  <span class="slds-utility-bar__text">Live Transcription</span>
+                    <lightning:icon size="x-small" iconName="utility:listen" class="pad-right"/>
+                    <span class="slds-utility-bar__text">Live Transcription</span>
                 </button>
+                <img class="fake-u-bar" src="{!$Resource.Demo_utilitybar}" alt="" />
               </li>
             </ul>
             <div class="slds-utility-panel slds-grid slds-grid_vertical hidden" aura:id="panel" role="dialog" aria-labelledby="panel-heading-01">
@@ -42,7 +44,7 @@
                     <div class="title slds-p-horizontal_small slds-p-top_small phrase">
                         {!v.phrase}
                         <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
-                            <a href="javascript:void(0)" aria-describedby="help">{!v.highlightOne}</a>
+                            <a href="" aria-describedby="help">{!v.highlightOne}</a>
                             <lightning:helptext
                                 class="helptext-icon" content="Something insightful about A."
                             />
@@ -51,7 +53,7 @@
                     <div class="title slds-p-horizontal_small slds-p-top_small right phrase" >
                         {!v.phraseTwo}
                         <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
-                            <a href="javascript:void(0)" aria-describedby="help">{!v.highlightTwo}</a>
+                            <a href="" aria-describedby="help">{!v.highlightTwo}</a>
                             <lightning:helptext
                                 class="helptext-icon" content="Something insightful about B."
                             />
