@@ -78,25 +78,55 @@
 .THIS .slds-utility-panel__body {
     overflow: hidden !important;
 }
-
+.THIS .title-right {
+    font-weight: 400;
+    font-size: 15px;
+    color: #2a2929;
+    line-height: 25px;
+    padding-left: 80px;
+}
+.THIS .title-left {
+    font-weight: 400;
+    font-size: 15px;
+    color: #2a2929;
+    line-height: 25px;
+    padding-left: 15px;
+    padding-right: 105px;
+    display: inline;
+}
+.THIS .title-left p{ 
+    display: inline;
+}
+.THIS .title-left div{ 
+    display: inline;
+}
+.THIS .tooltip-one {
+    position: absolute;
+    top: 60px;
+    left: 35px; 
+}
+.THIS .tooltip-two {
+    position: absolute;
+    top: 175px;
+    left: 55px;  
+}
+.THIS .block {
+    display: block !important;
+}
+.THIS .highlight {
+    color: #007DB5 !important;
+    cursor: pointer;
+}
 .THIS .fake-u-bar {
     width: 334px !important;
 }
-
 .THIS .right {
-    bottom: 25px;
     position: relative;
-    left: 210px;
+    left: 15px;
 }
-
-.THIS .tooltip-a {
-    color: red !important;
-}
-
 .THIS a:hover {
     text-decoration: none !important;
 }
-
 .THIS .rec-button {
 	width: 15px;
 	height: 15px;
@@ -108,7 +138,6 @@
     outline: none;
     margin-left: 5px;
 }
-
 .THIS .rec{
 	animation-name: pulse;
 	animation-duration: 1.5s;
@@ -267,13 +296,6 @@
 }
 .THIS .pad-right svg{
 	fill:black;
-}
-.THIS .title{
-    font-weight: 300;
-    font-size: 20px;
-    color: #2A2929;
-    line-height: 31px;
-    padding-left: 18px;
 }
 .THIS .sample{
 	font-size: 18px;

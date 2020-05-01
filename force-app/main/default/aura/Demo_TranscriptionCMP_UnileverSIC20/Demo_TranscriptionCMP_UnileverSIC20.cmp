@@ -3,9 +3,14 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
    
     <aura:attribute name="phrase" type="String" default=" "/>
-    <aura:attribute name="highlightOne" type="String" default=" "/>
     <aura:attribute name="phraseTwo" type="String" default=" "/>
+    <aura:attribute name="phraseThree" type="String" default=" "/>
+    <aura:attribute name="phraseFour" type="String" default=" "/>
+    <aura:attribute name="highlightOne" type="String" default=" "/>
     <aura:attribute name="highlightTwo" type="String" default=" "/>
+    <aura:attribute name="highlightThree" type="String" default=" "/>
+    <aura:attribute name="tooltipOne" type="boolean" default="false" />
+    <aura:attribute name="tooltipTwo" type="boolean" default="false" />
     <aura:attribute name="stage" type="Integer" default="0"/>
 
     <div>
@@ -13,7 +18,7 @@
             <h2 class="slds-assistive-text">Utility Bar</h2>
             <ul class="slds-utility-bar">
               <li class="slds-utility-bar__item">
-                  <button class="slds-button slds-utility-bar__action" aria-pressed="false" onclick="{!c.showAssistant}" aura:id="bar">                    
+                  <button class="slds-button slds-utility-bar__action" aria-pressed="false" aura:id="bar">                    
                     <lightning:icon size="x-small" iconName="utility:listen" class="pad-right"/>
                     <span class="slds-utility-bar__text">Live Transcription</span>
                 </button>
@@ -40,24 +45,35 @@
                       </button>
                   </div>
                 </div>
-                <div class="slds-utility-panel__body " onclick="{!c.startAssistant}">
-                    <div class="title slds-p-horizontal_small slds-p-top_small phrase">
+                <div class="slds-utility-panel__body">
+                    <div class="title-right slds-p-horizontal_small slds-p-top_small phrase">
                         {!v.phrase}
-                        <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
-                            <a href="" aria-describedby="help">{!v.highlightOne}</a>
-                            <lightning:helptext
-                                class="helptext-icon" content="Something insightful about A."
-                            />
-                        </div>
                     </div>
-                    <div class="title slds-p-horizontal_small slds-p-top_small right phrase" >
-                        {!v.phraseTwo}
-                        <div class="tool-tip" style="position:relative;position: relative;bottom: 31px;left: 131px;">
-                            <a href="" aria-describedby="help">{!v.highlightTwo}</a>
-                            <lightning:helptext
-                                class="helptext-icon" content="Something insightful about B."
-                            />
+                    <div class="title-left slds-p-horizontal_small slds-p-top_small phrase">
+                        <div>
+                            <p class="highlight" aria-describedby="help" onmouseover="{!c.showTooltipOne}" onmouseout="{!c.hideTooltipOne}">{!v.highlightOne}</p>
+                            <aura:if isTrue="{!v.tooltipOne}" >
+                                <div class="block slds-popover slds-popover_tooltip slds-nubbin_bottom-left tooltip-one" role="tooltip" id="help">
+                                    <div class="block slds-popover__body">
+                                        <span class="block">Detected Language: Hindi</span>
+                                        <span class="block">Translation: What is this?</span>
+                                        <span class="block">Pronunciation: yah kya hai</span>
+                                    </div>
+                                </div>
+                            </aura:if>
                         </div>
+                        <p>{!v.phraseTwo}</p>
+                        <p class="highlight" aria-describedby="help">{!v.highlightTwo}</p>
+                        <p>{!v.phraseThree}</p>
+                        <div>
+                            <p class="highlight" aria-describedby="help" onmouseover="{!c.showTooltipTwo}" onmouseout="{!c.hideTooltipTwo}">{!v.highlightThree}</p>
+                            <aura:if isTrue="{!v.tooltipTwo}" >
+                                <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left tooltip-two" role="tooltip" id="help">
+                                    <div class="slds-popover__body">(2) Available Einstein Recommendations</div>
+                                </div>
+                            </aura:if>
+                        </div>
+                        <p>{!v.phraseFour}</p>
                     </div>
                 </div>
             </div>
