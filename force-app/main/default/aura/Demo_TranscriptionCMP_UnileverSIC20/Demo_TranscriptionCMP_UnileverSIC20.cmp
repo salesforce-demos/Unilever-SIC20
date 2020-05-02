@@ -18,8 +18,8 @@
             <h2 class="slds-assistive-text">Utility Bar</h2>
             <ul class="slds-utility-bar">
               <li class="slds-utility-bar__item">
-                  <button class="slds-button slds-utility-bar__action" aria-pressed="false" aura:id="bar">                    
-                    <lightning:icon size="x-small" iconName="utility:listen" class="pad-right"/>
+                  <button class="slds-button slds-utility-bar__action" aria-pressed="false" aura:id="bar"> 
+                      <img src="{!$Resource.Demo_transcriptionIcon}" class="pad-right" alt="" />           
                     <span class="slds-utility-bar__text">Live Transcription</span>
                 </button>
                 <img class="fake-u-bar" src="{!$Resource.Demo_utilitybar}" alt="" />
@@ -29,9 +29,7 @@
               <div class="slds-utility-panel__header slds-grid slds-shrink-none">
                   <div class="slds-media slds-media_center">
                       <div class="slds-media__figure slds-m-right_x-small">
-                          <span class="slds-icon_container">
-                              <lightning:icon class="slds-button_icon" size="x-small" iconName="utility:listen"/>
-                          </span>
+                        <img src="{!$Resource.Demo_transcriptionIcon}" class="img-width" alt="" /> 
                       </div>
                       <div class="slds-media__body">
                           <h2 id="panel-heading-01">Live Transcription</h2>

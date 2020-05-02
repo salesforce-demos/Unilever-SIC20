@@ -80,19 +80,21 @@
 }
 .THIS .title-right {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     color: #2a2929;
     line-height: 25px;
-    padding-left: 80px;
+    padding-left: 50px;
+    margin-top: 5px;
 }
 .THIS .title-left {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     color: #2a2929;
     line-height: 25px;
     padding-left: 15px;
-    padding-right: 105px;
+    padding-right: 55px;
     display: inline;
+    margin-top: 13px;
 }
 .THIS .title-left p{ 
     display: inline;
@@ -102,19 +104,19 @@
 }
 .THIS .tooltip-one {
     position: absolute;
-    top: 60px;
-    left: 35px; 
+    top: 55px;
+    left: 20px; 
 }
 .THIS .tooltip-two {
     position: absolute;
-    top: 175px;
-    left: 55px;  
+    top: 165px;
+    left: 50px; 
 }
 .THIS .block {
     display: block !important;
 }
 .THIS .highlight {
-    color: #007DB5 !important;
+    color: #005EEF !important;
     cursor: pointer;
 }
 .THIS .fake-u-bar {
@@ -128,10 +130,10 @@
     text-decoration: none !important;
 }
 .THIS .rec-button {
-	width: 15px;
-	height: 15px;
+	width: 10px;
+    height: 14px;
 	font-size: 0;
-	background-color: red;
+	background-color: #D10D0D;
 	border: 0;
     border-radius: 35px;
     padding-top: 10px;
@@ -292,10 +294,14 @@
     border-bottom: 2px solid #1589ee;
 }
 .THIS .pad-right{
-	padding-right:5px;
+    padding-right:5px;
+    width: 21px;
 }
 .THIS .pad-right svg{
 	fill:black;
+}
+.THIS .img-width {
+    width: 16px;
 }
 .THIS .sample{
 	font-size: 18px;
