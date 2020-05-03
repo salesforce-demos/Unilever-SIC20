@@ -14,6 +14,24 @@ export default class DemoSentimentGraph extends LightningElement {
     @track containerDiv = {};
     @track containerId = '';
 
+    @track positiveArray = [50];
+    @track positiveValue = this.positiveArray[this.positiveArray.length];
+
+      // neutral:  { 
+      //   name: 'neutralCircularGaugeChart', 
+      //   id: 'demo-sentiment--gauge--neutral', 
+      //   title: 'Neutral', 
+      //   color: '#0000CC', 
+      //   values: [] 
+      // },
+      // negative: { 
+      //   name: 'negativeCircularGaugeChart', 
+      //   id: 'demo-sentiment--gauge--negative', 
+      //   title: 'Negative', 
+      //   color: '#CC0000', 
+      //   values: [] 
+      // }
+
     constructor() {
         super();
         // Because our event is listening to window events, it cannot be owned
@@ -27,19 +45,26 @@ export default class DemoSentimentGraph extends LightningElement {
         this.containerId = this.template.querySelector('div').id;
         this.containerDiv = this.template.querySelector('div');
 
-        Promise.all([
-            loadScript(this, demoSentimentGraph + '/highcharts.js')
-              .then(() => console.log("DSG: Highcharts loaded"))
-              .catch(error => console.log("DSG: Error in loading Highcharts"))
-          ])
-          .then(() => {
-            this.buildCharts();
-            this.dispatchKeyup();
-            this.updateInterval();            
-          })
-          .catch(error => {
-            window.console.log("DSG: The error is: " + error);
-          });
+        console.log('DSG Highcharts: ', typeof Highcharts == undefined ? 'undefined' : 'defined');
+        if (typeof Highcharts == undefined) {
+          Promise.all([
+              loadScript(this, demoSentimentGraph + '/highcharts.js')
+                .then(() => console.log("DSG: Highcharts loaded"))
+                .catch(error => console.log("DSG: Error in loading Highcharts"))
+            ])
+            .then(() => {
+              this.buildCharts();
+              this.dispatchKeyup();
+              this.updateInterval();            
+            })
+            .catch(error => {
+              window.console.log("DSG: The error is: " + error);
+            });
+          } else {
+              this.buildCharts();
+              this.dispatchKeyup();
+              this.updateInterval();   
+          }
     }
 
     // Builds chart using highcharts
@@ -119,11 +144,7 @@ export default class DemoSentimentGraph extends LightningElement {
                     }
                   },
                   marker: {
-                    // enabled: false,
-                    radius: 6,
-                    lineWidth: 2,
-                    fillColor: '#FFFFFF',
-                    lineColor: null,
+                    enabled: false
                   },
                 },
                 pointInterval: 3000, // 3 seconds
