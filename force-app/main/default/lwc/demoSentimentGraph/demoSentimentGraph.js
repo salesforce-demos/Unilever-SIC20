@@ -19,6 +19,8 @@ export default class DemoSentimentGraph extends LightningElement {
     @track neutralvalue = 0;  
     @track negativealue = 0;
 
+    @track metricsIcon = demoSentimentGraph + '/metrics.png';
+
     constructor() {
         super();
         // Because our event is listening to window events, it cannot be owned
@@ -31,11 +33,10 @@ export default class DemoSentimentGraph extends LightningElement {
     renderedCallback() {
         this.containerId = this.template.querySelector('div').id;
         this.containerDiv = this.template.querySelector('div');
+        this.metricsIcon = demoSentimentGraph + '/metrics.png';
 
         this.positivevalue = this.gaugeArray[0][this.gaugeArray[0].length-1];
-        console.log('Positive Value: ', this.positivevalue);
-
-        console.log('DSG Highcharts: ', typeof Highcharts == undefined ? 'undefined' : 'defined');
+        
         if (typeof Highcharts == undefined) {
           Promise.all([
               loadScript(this, demoSentimentGraph + '/highcharts.js')
@@ -77,7 +78,7 @@ export default class DemoSentimentGraph extends LightningElement {
                   enabled: false,
               },
               title: {
-                text: 'Sentiment',
+                text: 'Timeline',
                 align: 'left'
               },
               credits: {
@@ -151,12 +152,12 @@ export default class DemoSentimentGraph extends LightningElement {
                 ],
                 zones: [{
                       value: 40,
-                      color: '#FF0000'
+                      color: '#FA5858'
                   }, {
-                      value: 80,
-                      color: '#0000FF'
+                      value: 70,
+                      color: '#00A1E0'
                   }, {            
-                      color: '#00FF00'
+                      color: '#4ACE23'
                   }]
               }],
               navigation: {
@@ -213,12 +214,16 @@ export default class DemoSentimentGraph extends LightningElement {
       const neutralLength = this.gaugeArray[1].length;
       const negativeLength = this.gaugeArray[2].length;  
       const totalPoints = positiveLength + neutralLength + negativeLength;
-      
+
       // Rebuild each chart
-      console.log('Update to ', Math.round(this.gaugeArray[0].length/totalPoints * 100));      
+      
       this.positivevalue = Math.round(this.gaugeArray[0].length/totalPoints * 100);
-      this.template.querySelector("c-demo-sentiment-graph-gauge").updateGauge(this.positivevalue);
-    
+      this.neutralvalue = Math.round(this.gaugeArray[1].length/totalPoints * 100);
+      this.negativealue = Math.round(this.gaugeArray[2].length/totalPoints * 100);
+      this.template.querySelectorAll("c-demo-sentiment-graph-gauge")[0].updateGauge(this.positivevalue);
+      this.template.querySelectorAll("c-demo-sentiment-graph-gauge")[1].updateGauge(this.neutralvalue);
+      this.template.querySelectorAll("c-demo-sentiment-graph-gauge")[2].updateGauge(this.negativealue);
+
     }
 
     // Generates new number for updateGraph on setInterval
@@ -244,8 +249,7 @@ export default class DemoSentimentGraph extends LightningElement {
     }
 
     // Listens for global custom event from dispatchKeyup
-    listenKeyup(evt){      
-      console.log('evt.detail: ', evt.detail);
+    listenKeyup(evt){            
       let value = this.generateNewNumber(10, evt.detail);
         try { this.updateLineGraph(value) }
         catch (error) { console.log(error); }

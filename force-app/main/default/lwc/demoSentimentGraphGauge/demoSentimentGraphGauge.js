@@ -88,7 +88,7 @@ export default class DemoSentimentGraphGauge extends LightningElement {
       chart: {
         type: 'solidgauge',
         height: '100%',
-        maxWidth: 100,
+        maxWidth: 95,
         events: {
           load: function () {
               this.setSubtitle({ text: '0%' });
@@ -96,22 +96,24 @@ export default class DemoSentimentGraphGauge extends LightningElement {
         }
       },
       title: {
-        text: this.title,
+        text: '',
         floating: true,
-        y: 38,
+        y: 100,
         style: {
-          'font-size': '9px',
-          'font-weight': 'bold',
-          'text-transform': 'uppercase'
+          'font-size': '12px',
+          'text-transform': 'uppercase',
+          'color': '#8A8A8F',
         }
       },
       subtitle: {
         text: '-',
-        floating: true,
-        y: 50,
+        floating: false,
+        verticalAlign: 'middle',
+        useHTML: true,
+        // y: 50,
         style: {
-          color: '#777',
-          'font-size': '8px',
+          color: '#333230',
+          'font-size': '20px',
           'text-transform': 'uppercase'
         }
       },
@@ -124,7 +126,7 @@ export default class DemoSentimentGraphGauge extends LightningElement {
         background: [{ // Track for Move
           outerRadius: '112%',
           innerRadius: '88%',
-          backgroundColor: '#CCC',
+          backgroundColor: '#B8C8D3',
           borderWidth: 0
         }]
       },
@@ -162,6 +164,6 @@ export default class DemoSentimentGraphGauge extends LightningElement {
     //  listener version const newValue = value.detail;
     console.log('Ran updateGauge');
     this.gauge.series[0].data[0].update({ y: value });
-    this.gauge.setSubtitle({ text: value + '%' });
+    this.gauge.setSubtitle({ text: value + '<sup>%</sup>' });
   }
 }
