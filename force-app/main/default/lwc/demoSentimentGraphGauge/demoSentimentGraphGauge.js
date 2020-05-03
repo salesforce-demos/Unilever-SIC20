@@ -34,45 +34,49 @@ export default class DemoSentimentGraphGauge extends LightningElement {
 
     console.log('DSGG Highcharts: ', typeof Highcharts == undefined ? 'undefined' : 'defined');
       
-    if (typeof Highcharts == undefined) {
-      Promise.all([
-        loadScript(this, demoSentimentGraph + '/highcharts.js')
-          .then(() => {
-            console.log("DSGG: Highcharts loaded");
-            loadScript(this, demoSentimentGraph + '/highcharts-more.js')
-              .then(()=> {
-                console.log("DSG: Highcharts More loaded")
-                loadScript(this, demoSentimentGraph + '/solid-gauge.js')
-                  .then(()=> {
-                    console.log("DSG: Solid Gauge loaded");
-                    this.buildChart();
-                  })
-                  .catch(error => console.log("DSG: Error in loading Solid Gauge"));
-              })
-              .catch(error => console.log("DSG: Error in loading Highcharts More"));
-          })
-          .catch(error => console.log("DSGG: Error in loading Highcharts"))
+    if (typeof Highcharts == 'undefined') {
+      Promise.all([            
+          loadScript(this, demoSentimentGraph + '/highcharts.js')
+              .then(() => console.log("demoSentimentGraphGauge: Highcharts loaded for ", this.containerId))
+              .catch(error => console.log("demoSentimentGraphGauge: Error in loading Highcharts for ", this.containerId)),
       ])
-        .catch(error => {
-          window.console.log("DSG: The error is: " + error);
-        });
-    } else {    
-      Promise.all([        
-          loadScript(this, demoSentimentGraph + '/highcharts-more.js')
-            .then(()=> {
-              console.log("DSG: Highcharts More loaded")
-              loadScript(this, demoSentimentGraph + '/solid-gauge.js')
-                .then(()=> {
-                  console.log("DSG: Solid Gauge loaded");
+      .then(() => {  
+          Promise.all([         
+              loadScript(this, demoSentimentGraph + '/highcharts-more.js')
+                  .then(() => console.log("DSGG 1: HighchartsMore loaded for ", this.containerId))
+                  .catch(error => console.log("DSGG 1: Error in loading Highcharts for #", this.containerId)),
+          ]).then(() => {
+              Promise.all([
+                  loadScript(this, demoSentimentGraph + '/solid-gauge.js')
+                  .then(() => console.log("DSGG 1: HighchartsMore loaded for #", this.containerId))
+                  .catch(error => console.log("DSGG 1: Error in loading Highcharts for #", this.containerId)),
+              ]).then(() => {
+                  console.log('DSGG 1: sripts loaded for #', this.containerId, ', listening for event');                  
                   this.buildChart();
-                })
-                .catch(error => console.log("DSG: Error in loading Solid Gauge"));
-            })
-            .catch(error => console.log("DSG: Error in loading Highcharts More"))
-      ])
-        .catch(error => {
-          window.console.log("DSG: The error is: " + error);
-        });
+              })                    
+          });                
+      })
+      .catch(error => {
+          window.console.log("DSGG 1: The error is: " + error);
+      });
+    } else {    
+      Promise.all([         
+        loadScript(this, demoSentimentGraph + '/highcharts-more.js')
+            .then(() => console.log("DSGG 2: HighchartsMore loaded for #", this.containerId))
+            .catch(error => console.log("DSGG 2: Error in loading HighchartsMore for #", this.containerId)),
+      ]).then(() => {
+        Promise.all([
+            loadScript(this, demoSentimentGraph + '/solid-gauge.js')
+            .then(() => console.log("DSGG 2: SolidGauge loaded for #", this.containerId))
+            .catch(error => console.log("DSGG 2: Error in loading SolidGauge for #", this.containerId)),
+        ]).then(() => {
+            console.log('DSGG 2: sripts loaded for #', this.containerId, ', listening for event');            
+            this.buildChart();
+        })
+      })
+      .catch(error => {
+        window.console.log("DSGG 2: The error is: " + error);
+      });
     }
   }
   
@@ -154,9 +158,9 @@ export default class DemoSentimentGraphGauge extends LightningElement {
     });
   }
 
-  updateChart(value){
+  @api updateGauge(value){
     //  listener version const newValue = value.detail;
-
+    console.log('Ran updateGauge');
     this.gauge.series[0].data[0].update({ y: value });
     this.gauge.setSubtitle({ text: value + '%' });
   }

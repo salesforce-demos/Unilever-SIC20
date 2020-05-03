@@ -1,0 +1,8 @@
+.demo-sentiment--breakdown {
+    display: inline-flex;
+}
+.demo-sentiment--breakdown > span {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+}
