@@ -57,8 +57,13 @@
         component.set("v.tooltipTwo" , false);
     },
     closePanel : function(component, event, helper) {
+        // change NBA pic
+        var appEvent = $A.get("e.c:closeTranscriptionWindow");
+        appEvent.setParams({
+            "message" : "The transcription window has been closed."
+        });
+        appEvent.fire();
         // close window and reset all
         helper.resetBar(component, helper)
-        // change NBA pic
     }
 })

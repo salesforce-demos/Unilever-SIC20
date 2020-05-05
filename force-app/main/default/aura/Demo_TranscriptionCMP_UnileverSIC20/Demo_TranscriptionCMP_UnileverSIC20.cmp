@@ -1,7 +1,7 @@
 <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
-        <ltng:require scripts="{!$Resource.jquery}" afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    <ltng:require scripts="{!$Resource.jquery}" afterScriptsLoaded="{!c.afterScriptsLoaded}" />
         
-
+    <aura:registerEvent name="appEvent" type="c:closeTranscriptionWindow"/>
     <aura:handler event="c:SCGlobalEvent" action="{!c.handleGlobalEvent}"/>
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
    

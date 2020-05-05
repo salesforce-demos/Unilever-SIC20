@@ -183,127 +183,127 @@
        window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseTwo','This order ');
-            }), 2100
+            }), 3100
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightTwo','is');
-            }), 2300
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.highlightTwo',' is huge');
-            }), 2500
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree',', I');
-            }), 2700
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree',", I don't");
-            }), 2900
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree',", I don't think");
             }), 3300
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseThree',", I don't think I");
+                cmp.set('v.highlightTwo',' is huge');
             }), 3500
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseThree',", I don't think I have ");
+                cmp.set('v.phraseThree',', I');
             }), 3700
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.highlightThree','enough');
+                cmp.set('v.phraseThree',", I don't");
             }), 3900
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.highlightThree','enough money ');
+                cmp.set('v.phraseThree',", I don't think");
             }), 4100
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to');
+                cmp.set('v.phraseThree',", I don't think I");
             }), 4300
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase');
+                cmp.set('v.phraseThree',", I don't think I have ");
             }), 4500
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this');
+                cmp.set('v.highlightThree','enough');
             }), 4700
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much');
+                cmp.set('v.highlightThree','enough money ');
             }), 4900
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right');
+                cmp.set('v.phraseFour','to');
             }), 5100
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now');
+                cmp.set('v.phraseFour','to purchase');
             }), 5300
         );
         window.setTimeout(
             $A.getCallback(function() {
+                cmp.set('v.phraseFour','to purchase this');
+            }), 5500
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFour','to purchase this much');
+            }), 5700
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFour','to purchase this much right');
+            }), 5900
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFour','to purchase this much right now');
+            }), 6100
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why');
-            }), 6300
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now. Why is');
-            }), 6500
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now. Why is it');
-            }), 6700
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now. Why is it so?');
-            }), 6900
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much');
             }), 7100
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher');
+                cmp.set('v.phraseFour','to purchase this much right now. Why is');
             }), 7300
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than');
+                cmp.set('v.phraseFour','to purchase this much right now. Why is it');
             }), 7500
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than normal');
+                cmp.set('v.phraseFour','to purchase this much right now. Why is it so?');
             }), 7700
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than normal?');
+                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much');
             }), 7900
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher');
+            }), 8100
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than');
+            }), 8300
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than normal');
+            }), 8500
+        );
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than normal?');
+            }), 8700
         );
     },
     startDialogueThree : function (cmp, event, helper) {
