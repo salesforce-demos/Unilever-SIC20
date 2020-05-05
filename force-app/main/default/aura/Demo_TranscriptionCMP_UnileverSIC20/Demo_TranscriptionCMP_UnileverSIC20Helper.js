@@ -6,94 +6,75 @@
 		var bar = component.find('bar');
         $A.util.toggleClass(bar,'slds-is-active');
 	},
-    startAssistant : function(component, event, helper) {
-        // start transcription 
-        var stage = component.get('v.stage');
-        if(stage == 1){
-            this.fakeText(component,helper);
-            stage++;
-        }else if(stage == 2){
-            this.resetPanel(component);
-            stage = 1; 
-		}
-        component.set('v.stage',stage);
-    },
-	fakeText : function(cmp,hlp) {
+    startDialogueOne : function(cmp, event, helper) {
+        console.log('clicked for dialgoue one');
         cmp.set('v.phrase','');  
-        cmp.set('v.phraseTwo','');  
-        cmp.set('v.highlightOne','');  
-        cmp.set('v.highlightTwo','');  
-        /* Sakshi:
+         /* Sakshi:
         Hi Darshil, this is Sakshi your Unilever sales representative.  
         I see that you have some questions about the contents of your cart, is that right? */      
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi');
-            }), 1000
+            }), 500
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil');
-            }), 1200
+            }), 700
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this');
-            }), 1400
+            }), 900
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is');
-            }), 1600
+            }), 1100
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi');
-            }), 1800
+            }), 1300
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your');
-            }), 2100
+            }), 1500
         );  
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your unilever');
-            }), 2300
+            }), 1700
         ); 
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your unilever sales');
-            }), 2500
-        ); 
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phrase','Hi Darshil, this is Sakshi your unilever sales representative.');
-            }), 2700
+            }), 1900
         ); 
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative.');
-            }), 2900
-        ); 
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative.');
-            }), 2900
+            }), 2100
         ); 
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I');
-            }), 3300
+            }), 3100
         ); 
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see');
-            }), 3500
+            }), 3300
         ); 
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that');
+            }), 3500
+        ); 
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you');
             }), 3700
         ); 
         window.setTimeout(
@@ -103,259 +84,270 @@
         ); 
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you');
+                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have');
             }), 4100
         ); 
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have');
+                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions');
             }), 4300
         ); 
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions');
+                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about');
             }), 4500
         ); 
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about');
+                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the');
             }), 4700
         ); 
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the');
+                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents');
             }), 4900
         ); 
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents');
             }), 5100
-        ); 
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents');
-            }), 5300
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents in');
-            }), 5500
+            }), 5300
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents in your');
-            }), 5700
+            }), 5500
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents in your cart');
-            }), 5900
+            }), 5700
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents in your cart, is');
-            }), 6100
+            }), 6200
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents in your cart, is that');
-            }), 6300
+            }), 6400
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents in your cart, is that right');
-            }), 6500
+            }), 6600
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phrase','Hi Darshil, this is Sakshi your Unilever sales representative. I see that you have questions about the contents in your cart, is that right?');
             }), 6700
         );
+    },
+	startDialogueTwo : function(cmp,event,helper) {
+        console.log('clicked for dialgoue two');
+        cmp.set('v.phraseTwo','');  
+        cmp.set('v.phraseThree','');  
+        cmp.set('v.phraseFour','');  
+        cmp.set('v.highlightOne','');  
+        cmp.set('v.highlightTwo','');  
+        cmp.set('v.highlightThree',''); 
         /* Darshil:
-        यह क्या है(Yeh kya hai)?. It’s a _much bigger order_ than I usually make and I don’t know if I have _enough money_ to purchase this much right now. 
-        Why is it so much higher than normal? */
+        यह क्या है? 
+        This order is huge! I don't think have enough money to purchase this right now. 
+        Why is it so much higher than normal */
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightOne','यह');
-            }), 7300
+            }), 500
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightOne','यह क्या');
-            }), 7500
+            }), 700
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightOne','यह क्या है');
-            }), 7700
+            }), 900
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightOne','यह क्या है? ');
-            }), 7900
+            }), 1100
+        );
+       window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseTwo','This order ');
+            }), 2100
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseTwo','It’s a ');
-            }), 8300
+                cmp.set('v.highlightTwo','is');
+            }), 2300
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.highlightTwo','much');
-            }), 8500
+                cmp.set('v.highlightTwo',' is huge');
+            }), 2500
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.highlightTwo','much bigger');
-            }), 8700
+                cmp.set('v.phraseThree',', I');
+            }), 2700
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.highlightTwo','much bigger order ');
-            }), 8900
+                cmp.set('v.phraseThree',", I don't");
+            }), 2900
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseThree','than');
-            }), 9100
+                cmp.set('v.phraseThree',", I don't think");
+            }), 3300
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I');
-            }), 9300
+                cmp.set('v.phraseThree',", I don't think I");
+            }), 3500
         );
         window.setTimeout(
             $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually');
-            }), 9500
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually make');
-            }), 9700
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually make and');
-            }), 9900
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually make and I');
-            }), 10200
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually make and I don’t');
-            }), 10400
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually make and I don’t know');
-            }), 10600
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually make and I don’t know if');
-            }), 10800
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually make and I don’t know if I');
-            }), 11000
-        );
-        window.setTimeout(
-            $A.getCallback(function() {
-                cmp.set('v.phraseThree','than I usually make and I don’t know if I have ');
-            }), 11200
+                cmp.set('v.phraseThree',", I don't think I have ");
+            }), 3700
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightThree','enough');
-            }), 11400
+            }), 3900
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.highlightThree','enough money ');
-            }), 11600
+            }), 4100
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to');
-            }), 11800
+            }), 4300
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase');
-            }), 12000
+            }), 4500
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this');
-            }), 12000
+            }), 4700
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much');
-            }), 12200
+            }), 4900
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right');
-            }), 12400
+            }), 5100
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now');
-            }), 12600
+            }), 5300
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why');
-            }), 13000
+            }), 6300
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why is');
-            }), 13200
+            }), 6500
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why is it');
-            }), 13400
+            }), 6700
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why is it so?');
-            }), 13600
+            }), 6900
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why is it so much');
-            }), 13800
+            }), 7100
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher');
-            }), 14000
+            }), 7300
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than');
-            }), 14200
+            }), 7500
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than normal');
-            }), 14400
+            }), 7700
         );
         window.setTimeout(
             $A.getCallback(function() {
                 cmp.set('v.phraseFour','to purchase this much right now. Why is it so much higher than normal?');
-            }), 14600
+            }), 7900
         );
     },
-    resetBar : function(component,hlp){
+    startDialogueThree : function (cmp, event, helper) {
+        console.log('clicked for dialgoue three');
+        cmp.set('v.phraseFive','');  
+        /* Sakshi:
+        I can help you out with that Darshil!*/
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFive','I');
+            }), 500
+        )
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFive','I can');
+            }), 700
+        )
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFive',' I can help');
+            }), 900
+        )
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFive','I can help you out');
+            }), 1100
+        )
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFive','I can help you out with');
+            }), 1300
+        )
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFive','I can help you out with that');
+            }), 1500
+        )
+        window.setTimeout(
+            $A.getCallback(function() {
+                cmp.set('v.phraseFive','I can help you out with that Darshil!');
+            }), 1700
+        )
+    },
+    resetBar : function(component){
         // set bar to original status
         var assistant = component.find('panel');
         $A.util.toggleClass(assistant,'hidden');

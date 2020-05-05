@@ -96,6 +96,14 @@
     display: inline;
     margin-top: 13px;
 }
+.THIS .title-right-two {
+    font-weight: 400;
+    font-size: 16px;
+    color: #2a2929;
+    line-height: 25px;
+    padding-left: 115px;
+    margin-top: 5px;
+}
 .THIS .title-left p{ 
     display: inline;
 }
@@ -109,8 +117,8 @@
 }
 .THIS .tooltip-two {
     position: absolute;
-    top: 165px;
-    left: 50px; 
+    top: 142px;
+    left: 89px;
 }
 .THIS .block {
     display: block !important;
@@ -261,7 +269,7 @@
     background: #1589EE;
 }
 .THIS .slds-utility-panel{
-    height: 296px;
+    height: 315px;
     width: 398px;
     left: 12px;
     bottom: 40px;

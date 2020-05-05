@@ -15,9 +15,30 @@
         window.setTimeout(
             $A.getCallback(function() {
                 helper.showAssistant(component, event, helper);
-                helper.startAssistant(component, event, helper);
             }), 1000
         );
+    },
+    afterScriptsLoaded : function(component, event, helper) {
+        jQuery(document).ready(function() {
+            $('body').keyup(function(e){
+                console.log('code: ' + e.keyCode);
+                if(e.which == 49){
+                    console.log('1');
+                    // press one for dialogue one
+                    helper.startDialogueOne(component, event, helper);
+                }
+                if(e.which == 50){
+                    console.log('2');
+                     // press two for dialogue two
+                    helper.startDialogueTwo(component, event, helper);
+                }
+                if(e.which == 51){
+                    console.log('1');
+                    // press three for dialogue three
+                    helper.startDialogueThree(component, event, helper);
+                }
+            });
+        });
     },
     showTooltipOne : function(component, event, helper) {
         // open tooltip one
@@ -38,5 +59,6 @@
     closePanel : function(component, event, helper) {
         // close window and reset all
         helper.resetBar(component, helper)
+        // change NBA pic
     }
 })
