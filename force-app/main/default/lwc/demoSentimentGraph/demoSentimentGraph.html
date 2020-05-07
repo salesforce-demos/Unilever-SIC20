@@ -1,6 +1,7 @@
 <template>
     <span class="demo-sentiment">
-        <h2><!-- img src={metricsIcon} alt="salesforce Metrics" / -->Sentiment Analysis</h2>
+        <h2><img src={metricsicon} />Sentiment Analysis</h2>
+        <img src={datedropdown} class="demo-sentiment--date"/>
         <span class="demo-sentiment--breakdown">
             <span><c-demo-sentiment-graph-gauge title="Positive" color="#4ACE23" ></c-demo-sentiment-graph-gauge></span>
             <span><c-demo-sentiment-graph-gauge title="Neutral" color="#00A1E0" ></c-demo-sentiment-graph-gauge></span>
@@ -10,9 +11,15 @@
             <span>Positive</span>
             <span>Neutral</span>
             <span>Negative</span>
-        </span>    
+        </span>
+        <h2>Timeline</h2>
         <figure class="highcharts-figure">
-            <div id="container" lwc:dom="manual"></div>
+            <div id="container" class="demo-sentiment--line" lwc:dom="manual"></div>
         </figure>
+        <span class="demo-sentiment--breakdown legend" onclick={updateInterval}>            
+            <span><i class="demo-sentiment--icon positive"></i>Positive</span>
+            <span><i class="demo-sentiment--icon neutral"></i>Neutral</span>          
+            <span><i class="demo-sentiment--icon negative"></i>Negative</span>
+        </span>
     </span>
 </template>

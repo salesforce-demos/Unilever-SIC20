@@ -2,7 +2,6 @@ import { LightningElement, track, api } from 'lwc';
 import demoSentimentGraph from '@salesforce/resourceUrl/demoSentimentGraph';
 import { loadScript } from 'lightning/platformResourceLoader';
 
-
 export default class DemoSentimentGraphGauge extends LightningElement {
 
   @track gauge = {};
@@ -18,21 +17,12 @@ export default class DemoSentimentGraphGauge extends LightningElement {
   @api title = 'Default Title';
   @api color = '#000000';
   @api value = 0;
-
-  // constructor() {
-  //   super();
-  //   // Because our event is owned by the parent and requires highcharts to
-  //   // rerender the chart, we use global event listeners in updateGauge to pass
-  //   // the new value and a global dispatch event in the parent.
-  //   this.addEventListener('sentimentGaugeUpdate', this.updateGauge);
-  // }
+  @api initialvalue = 0;
 
   // Loads libraries and calls functions.
   renderedCallback() {
     this.containerId = this.template.querySelector('div').id;
     this.containerDiv = this.template.querySelector('div');
-
-    console.log('DSGG Highcharts: ', typeof Highcharts == undefined ? 'undefined' : 'defined');
       
     if (typeof Highcharts == 'undefined') {
       Promise.all([            
@@ -80,18 +70,19 @@ export default class DemoSentimentGraphGauge extends LightningElement {
     }
   }
   
-  buildChart(){
-    console.log('DSGG: Gauge Built for ', this.containerId);
-    console.log('DSGG: ', this.title, this.color, this.value);
+  buildChart(){ 
+
+    let myvalue = this.initialvalue + '<sup>%</sup>';
+
     this.gauge = new Highcharts.chart(this.containerDiv, {
       renderTo: this.containerId,
       chart: {
         type: 'solidgauge',
-        height: '100%',
-        maxWidth: 95,
+        height: '110%',
+        maxWidth: '110%',
         events: {
           load: function () {
-              this.setSubtitle({ text: '0%' });
+              this.setSubtitle({ text: myvalue });
           }
         }
       },
@@ -100,8 +91,7 @@ export default class DemoSentimentGraphGauge extends LightningElement {
         floating: true,
         y: 100,
         style: {
-          'font-size': '12px',
-          'text-transform': 'uppercase',
+          'font-size': '12px',          
           'color': '#8A8A8F',
         }
       },
@@ -114,7 +104,8 @@ export default class DemoSentimentGraphGauge extends LightningElement {
         style: {
           color: '#333230',
           'font-size': '20px',
-          'text-transform': 'uppercase'
+          'font-family': 'SalesforceSans-Regular',
+          'letter-spacing': '0'
         }
       },
       tooltip: {
@@ -125,8 +116,8 @@ export default class DemoSentimentGraphGauge extends LightningElement {
         endAngle: 360,
         background: [{ // Track for Move
           outerRadius: '112%',
-          innerRadius: '88%',
-          backgroundColor: '#B8C8D3',
+          innerRadius: '88%', 
+          backgroundColor: 'rgb(232,236,240)',
           borderWidth: 0
         }]
       },
@@ -152,7 +143,7 @@ export default class DemoSentimentGraphGauge extends LightningElement {
           color: this.color,
           radius: '112%',
           innerRadius: '88%',
-          y: this.value
+          y: this.initialvalue
         }]
       }],
       credits: { enabled: false },
@@ -161,8 +152,7 @@ export default class DemoSentimentGraphGauge extends LightningElement {
   }
 
   @api updateGauge(value){
-    //  listener version const newValue = value.detail;
-    console.log('Ran updateGauge');
+    //  listener version const newValue = value.detail;    
     this.gauge.series[0].data[0].update({ y: value });
     this.gauge.setSubtitle({ text: value + '<sup>%</sup>' });
   }
